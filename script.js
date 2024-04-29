@@ -28,3 +28,23 @@ const posts = [
     likes: 152,
   },
 ];
+
+const container = document.querySelector('.container');
+
+function picture() {
+  posts.forEach((obj) => {
+    container.innerHTML += `
+     <section class="artist-profile">
+     <div class="profile">
+     <img class ="profile-img" src="${obj.avatar}"/>
+    <h2>${obj.name}</h2>
+    </div>
+    <p>${obj.location}</p>
+    <img src="${obj.post}"/>
+    <p>${obj.likes} likes</p>
+    <p>${obj.comment}</p>
+</section>`;
+  });
+}
+
+picture();
