@@ -32,19 +32,25 @@ const posts = [
 const container = document.querySelector('.container');
 
 function picture() {
-  posts.forEach((obj) => {
-    container.innerHTML += `
+  posts.forEach((images) => {
+    render(images);
+  });
+}
+
+function render(obj) {
+  container.innerHTML += `
      <section class="artist-profile">
      <div class="profile">
-     <img class ="profile-img" src="${obj.avatar}"/>
-    <h2>${obj.name}</h2>
+      <img src="${obj.avatar}"/>
+     <div class="info">
+    <h2 class="name">${obj.name}</h2>
+            <p class="location">${obj.location}</p>
     </div>
-    <p>${obj.location}</p>
-    <img src="${obj.post}"/>
+     </div>
+     <img  class= "post-image" src="${obj.post}"/>
     <p>${obj.likes} likes</p>
     <p>${obj.comment}</p>
 </section>`;
-  });
 }
 
 picture();
